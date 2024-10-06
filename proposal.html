@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal to Nihirika</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('https://i.imgur.com/GzPtJjP.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
+            max-width: 500px;
+            font-size: 18px;
+        }
+
+        .heart {
+            font-size: 60px;
+            color: red;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            color: #FF4081;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            color: white;
+            background-color: #FF4081;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #ff79a8;
+        }
+
+        .yes-button {
+            background-color: #4CAF50;
+        }
+
+        .yes-button:hover {
+            background-color: #66bb6a;
+        }
+
+        .no-button {
+            background-color: #F44336;
+        }
+
+        .no-button:hover {
+            background-color: #ef5350;
+        }
+
+        /* Custom Styling for next page message */
+        .next-page-message {
+            font-size: 24px;
+            color: #ff79a8;
+            text-align: center;
+            padding: 50px;
+            background-color: #fff0f5;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* For background music control */
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+   
+
+    <div class="container">
+        <div class="heart">❤️</div>
+        <h1>Dear Nihirika,</h1>
+        <p>You are the love of my life, and I can't imagine my world without you. Would you do me the honor of being my partner for life?</p>
+
+        <div class="buttons">
+            <a href="#" class="button yes-button" id="yesButton">Of course!</a>
+            <a href="#" class="button no-button" id="noButton">Nope</a>
+        </div>
+    </div>
+
+    <script>
+        // Yes button action
+        document.getElementById('yesButton').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.body.innerHTML = `
+                <div class="next-page-message">
+                    <h1>Thanks for choosing me as your partner!</h1>
+                    <p>This is the greatest day of my life. 🥰💖😍</p>
+                    <p>I can't wait to spend every moment of my life with you! 😊❤️</p>
+                </div>
+            `;
+        });
+
+        // No button action - make it loop
+        document.getElementById('noButton').addEventListener('click', function(event) {
+            event.preventDefault();
+            alert("Are you sure? Give it another thought 😜");
+            window.location.reload(); // Reloads the page to loop the question
+        });
+    </script>
+</body>
+</html>
